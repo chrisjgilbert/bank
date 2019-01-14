@@ -16,6 +16,7 @@ class Account
   def withdraw(amount)
     raise_insufficient_funds_error if insufficient_funds?(amount)
 
+    add_to_transactions(amount)
     @balance -= amount
   end
 
