@@ -19,10 +19,15 @@ describe 'account feature' do
       expect { account.withdraw(5) }.to raise_error
     end
 
-    it('adds a transaction to the transactions array') do
+    it('adds a deposit transaction to the transactions array') do
+      account = Account.new
+      expect { account.deposit(100) }.to change { account.transactions.length }.by(1)
+    end
+
+    it('adds a withdrawl transaction to the transactions array') do
       account = Account.new
       account.deposit(100)
-      expect(account.transactions.length).to eq(1)
+      expect { account.withdraw(50) }.to change { account.transactions.length }.by(1)
     end
   end
 end
