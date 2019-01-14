@@ -22,6 +22,11 @@ describe Account do
           account.deposit(10)
           expect { account.withdraw(10) }.to change { account.balance }.by(-10)
         end
+        it('adds transaction to transactions array') do
+          account = Account.new
+          account.deposit(100)
+          expect { account.withdraw(50) }.to change { account.transactions.length }.by(1)
+        end
       end
       context('with insuficcient funds') do
         it('raies an error') do
