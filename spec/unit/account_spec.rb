@@ -8,6 +8,11 @@ describe Account do
         account = Account.new
         expect { account.deposit(10) }.to change { account.balance }.by(10)
       end
+
+      it('adds transaction to transactions array') do
+        account = Account.new
+        expect { account.deposit(100) }.to change { account.transactions }.by(1)
+      end
     end
 
     describe('#withdraw') do

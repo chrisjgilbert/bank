@@ -20,7 +20,9 @@ describe 'account feature' do
     end
 
     it('adds a transaction to the transactions array') do
-      
+      account = Account.new
+      account.deposit(100)
+      expect(account.transactions.length).to eq(1)
     end
   end
 end
