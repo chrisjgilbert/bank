@@ -18,5 +18,9 @@ describe 'account feature' do
       account = Account.new
       expect { account.withdraw(5) }.to raise_error
     end
+
+    it('adds a transaction to the transactions array') do
+      
+    end
   end
 end
