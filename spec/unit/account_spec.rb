@@ -11,7 +11,7 @@ describe Account do
 
       it('adds transaction to transactions array') do
         account = Account.new
-        expect { account.deposit(100) }.to change { account.transactions }.by(1)
+        expect { account.deposit(100) }.to change { account.transactions.length }.by(1)
       end
     end
 
