@@ -1,5 +1,4 @@
 class Account
-
   DEFAULT_BALANCE = 0
 
   attr_reader :balance
@@ -11,5 +10,4 @@ class Account
   def deposit(amount)
     @balance += amount
   end
-
 end

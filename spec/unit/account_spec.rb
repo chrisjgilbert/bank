@@ -2,7 +2,6 @@ require 'spec_helper'
 require 'account'
 
 describe Account do
-
   context('transactions') do
     describe('#deposit') do
       it('adds amount to balance') do
