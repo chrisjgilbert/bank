@@ -11,9 +11,18 @@ describe Account do
     end
 
     describe('#withdraw') do
-      it('subtracts amount from balance') do
-        account = Account.new
-        expect { account.withdraw(10) }.to change { account.balance }.by(-10)
+      context('with sufficient funds') do
+        it('subtracts amount from balance ') do
+          account = Account.new
+          account.deposit(10)
+          expect { account.withdraw(10) }.to change { account.balance }.by(-10)
+        end
+      end
+      context('with insuficcient funds') do
+        it('raies an error') do
+          account = Account.new
+          expect { account.withdraw(10) }.to raise_error('Unable to withdraw: insufficient funds!')
+        end
       end
     end
   end
