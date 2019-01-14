@@ -7,5 +7,10 @@ describe 'account feature' do
       account = Account.new
       expect { account.deposit(5) }.not_to raise_error
     end
+
+    it('allows a user to withdraw funds into their account') do
+      account = Account.new
+      expect { account.withdraw(5) }.not_to raise_error
+    end
   end
 end
