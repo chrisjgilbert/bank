@@ -9,7 +9,7 @@ class Account
   end
 
   def deposit(amount)
-    @transactions.push(amount)
+    add_to_transactions(amount)
     @balance += amount
   end
 
@@ -27,5 +27,9 @@ class Account
 
   def raise_insufficient_funds_error
     raise 'Unable to withdraw: insufficient funds!'
+  end
+
+  def add_to_transactions(transaction)
+    @transactions.push(transaction)
   end
 end
