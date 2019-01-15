@@ -1,5 +1,9 @@
 # Bank Tech Test in Ruby
 
+## My approach   
+* 100% test coverage
+* No Rubocop linter offenses
+
 ## How To Use
 `git clone https://github.com/chrisjgilbert/bank`   
 `cd bank`   
