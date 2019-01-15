@@ -18,11 +18,15 @@ Once this was done I created the DateFormatter then finally the Statement class.
 * To run `rubocop` in project root   
 
 ## How To Use
-`git clone https://github.com/chrisjgilbert/bank`   
-`cd bank`   
-`irb`   
-`require './lib/account'`   
-`account = Account.new`
+* `git clone https://github.com/chrisjgilbert/bank`   
+* `cd bank`   
+* `irb`   
+* `require './lib/account'`   
+* `account = Account.new`
+* `account.deposit(amount)` to deposit
+* `account.withdraw(amount)` to withdraw
+* `account.print_statement` to view statement
+Note: you must have enough funds to withdraw!
 
 ## Acceptance Criteria   
 * Given a client makes a deposit of 1000 on 10-01-2012
