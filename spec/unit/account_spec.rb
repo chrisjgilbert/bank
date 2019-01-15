@@ -37,12 +37,16 @@ describe Account do
           expect { subject.withdraw(10) }.to change { subject.balance }.by(-10)
         end
         it('adds transaction to transactions array') do
-          subject.deposit(100)
           expect { subject.withdraw(50) }.to change { subject.transactions.length }.by(1)
         end
         it('adds date to transaction') do
           expect(date_formatter).to receive(:getDate)
           subject.withdraw(10)
+        end
+        it('adds complete transaction detail to transactions') do
+          subject.deposit(100)
+          subject.withdraw(5)
+          expect(subject.transactions).to eq [{:balance=>100, :credit=>100, :date=>"01/01/2001"}, {:balance=>95, :date=>"01/01/2001", :debit=>5}]
         end
       end
       context('with insuficcient funds') do
