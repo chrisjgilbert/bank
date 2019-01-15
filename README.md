@@ -1,8 +1,21 @@
 # Bank Tech Test in Ruby
 
 ## My approach   
+I began this challenge by diagramming out the classes and their respective behaviour and state using CRC cards. It became apparent from this that I would need an Account class responsible for transactions, a Statement class responsible for printing a statement and a DateFormatter to give me flexibility in how the date is displayed.
+
+After this planning stage, I started by creating the Account class and it's core transaction methods: deposit and withdraw.
+
+Once this was done I created the DateFormatter then finally the Statement class.
+
+## Testing
+* Tested using RSpec   
+* To run `rspec` in project root    
 * 100% test coverage
-* No Rubocop linter offenses
+
+## Linting
+* I used Rubocop a Linter   
+* No outstanding offenses   
+* To run `rubocop` in project root   
 
 ## How To Use
 `git clone https://github.com/chrisjgilbert/bank`   
