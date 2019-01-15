@@ -21,6 +21,11 @@ describe Account do
         expect(date_formatter).to receive(:getDate)
         subject.deposit(10)
       end
+
+      it('adds complete transaction detail to transactions') do
+        subject.deposit(5)
+        expect(subject.transactions).to eq [{:date=>"01/01/2001", :credit=>5, :balance=>5}]
+      end
     end
 
     describe('#withdraw') do
