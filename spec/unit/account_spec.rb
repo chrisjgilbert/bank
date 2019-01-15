@@ -49,7 +49,7 @@ describe Account do
 
     describe('#print_statement') do
       it('calls on statement to print') do
-        expect(statement).to receive(:print)
+        expect(statement).to receive(:print).with(subject.transactions)
         subject.print_statement
       end
     end
