@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 group :test, :development do
   gem 'rspec'
-  gem 'rubocop', '~> 0.62.0', require: false
+  gem 'rubocop'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
