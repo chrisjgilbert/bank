@@ -3,21 +3,40 @@ class Account
 
   attr_reader :balance, :transactions
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = DEFAULT_BALANCE
     @transactions = []
+    @statment = statement
   end
 
   def deposit(amount)
-    add_to_transactions(amount)
     @balance += amount
+    add_to_transactions(
+      {
+        date: "01/10/14",
+        type: :debit,
+        amount: amount,
+        balance: @balance
+      }
+    )
   end
 
   def withdraw(amount)
     raise_insufficient_funds_error if insufficient_funds?(amount)
 
-    add_to_transactions(amount)
     @balance -= amount
+    add_to_transactions(
+      {
+        date: "01/10/14",
+        type: :debit,
+        amount: amount,
+        balance: @balance
+      }
+    )
+  end
+
+  def print_statement
+    @statment.print(@transactions)
   end
 
   private

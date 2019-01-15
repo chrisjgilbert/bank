@@ -31,7 +31,8 @@ describe 'account feature' do
     end
 
     it('prints out a statement') do
-      account = Account.new
+      statement = Statement.new
+      account = Account.new(statement)
       account.deposit(100)
       account.withdraw(50)
       expect { account.print_statement }.not_to raise_error
