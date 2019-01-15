@@ -1,7 +1,7 @@
 # Bank Tech Test in Ruby
 
 ## My approach   
-I began this challenge by diagramming out the classes and their respective behaviour and state using CRC cards. It became apparent from this that I would need an Account class responsible for transactions, a Statement class responsible for printing a statement and a DateFormatter to give me flexibility in how the date is displayed.
+I began this challenge by diagramming out the classes and their respective behaviour and state using CRC cards. It became apparent from this that I would need an Account class responsible for transactions, a Statement class responsible for printing a statement and a DateFormatter responsible for getting the date and formatting as required.
 
 After this planning stage, I started by creating the Account class and it's core transaction methods: deposit and withdraw.
 
