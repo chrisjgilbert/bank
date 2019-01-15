@@ -7,7 +7,7 @@ class Statement
   private
 
   def print_header
-    puts "date || credit || debit || balance"
+    puts 'date || credit || debit || balance'
   end
 
   def print_transactions(transactions)
@@ -21,6 +21,6 @@ class Statement
   end
 
   def number_formatter(number)
-    '%.2f' % number if number
+    format('%.2f', number) if number
   end
 end

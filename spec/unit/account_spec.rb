@@ -2,9 +2,8 @@ require 'spec_helper'
 require 'account'
 
 describe Account do
-
   let(:statement) { double(:statement) }
-  let(:date_formatter) { double(:date_formatter, getDate: '01/01/2001') }
+  let(:date_formatter) { double(:date_formatter, get_date: '01/01/2001') }
   let(:subject) { described_class.new(statement, date_formatter) }
 
   context('transactions') do
@@ -18,13 +17,13 @@ describe Account do
       end
 
       it('adds date to transaction') do
-        expect(date_formatter).to receive(:getDate)
+        expect(date_formatter).to receive(:get_date)
         subject.deposit(10)
       end
 
       it('adds complete transaction detail to transactions') do
         subject.deposit(5)
-        expect(subject.transactions).to eq [{:date=>"01/01/2001", :credit=>5, :balance=>5}]
+        expect(subject.transactions).to eq [{ date: '01/01/2001', credit: 5, balance: 5 }]
       end
     end
 
@@ -40,13 +39,13 @@ describe Account do
           expect { subject.withdraw(50) }.to change { subject.transactions.length }.by(1)
         end
         it('adds date to transaction') do
-          expect(date_formatter).to receive(:getDate)
+          expect(date_formatter).to receive(:get_date)
           subject.withdraw(10)
         end
         it('adds complete transaction detail to transactions') do
           subject.deposit(100)
           subject.withdraw(5)
-          expect(subject.transactions).to eq [{:balance=>100, :credit=>100, :date=>"01/01/2001"}, {:balance=>95, :date=>"01/01/2001", :debit=>5}]
+          expect(subject.transactions).to eq [{ balance: 100, credit: 100, date: '01/01/2001' }, { balance: 95, date: '01/01/2001', debit: 5 }]
         end
       end
       context('with insuficcient funds') do

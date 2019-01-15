@@ -16,7 +16,7 @@ class Account
   def deposit(amount)
     credit(amount)
     add_to_transactions(
-      date: @date_formatter.getDate,
+      date: @date_formatter.get_date,
       credit: amount,
       balance: @balance
     )
@@ -27,7 +27,7 @@ class Account
 
     debit(amount)
     add_to_transactions(
-      date: @date_formatter.getDate,
+      date: @date_formatter.get_date,
       debit: amount,
       balance: @balance
     )
