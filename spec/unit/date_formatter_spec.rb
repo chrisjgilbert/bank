@@ -11,6 +11,14 @@ describe DateFormatter do
       allow(date).to receive(:strftime).and_return("14/01/2019")
       expect(today.getDate).to eq("14/01/2019")
     end
+
+    it('calls today on date') do
+      date = double(:date)
+      today = DateFormatter.new(date)
+      allow(date).to receive(:strftime)
+      expect(date).to receive(:today).and_return(date)
+      today.getDate
+    end
   end
 
 end
