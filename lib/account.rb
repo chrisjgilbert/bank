@@ -27,7 +27,8 @@ class Account
     @balance -= amount
     add_to_transactions(
       {
-        amount: amount,
+        date: @date_formatter.getDate,
+        debit: amount,
         balance: @balance
       }
     )
