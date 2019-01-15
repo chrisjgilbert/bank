@@ -1,5 +1,5 @@
-require 'date_formatter'
-require 'statement'
+require_relative './date_formatter'
+require_relative './statement'
 
 class Account
   DEFAULT_BALANCE = 0

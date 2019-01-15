@@ -1,3 +1,5 @@
+require 'date'
+
 class DateFormatter
   def initialize(date = Date)
     @date = date
