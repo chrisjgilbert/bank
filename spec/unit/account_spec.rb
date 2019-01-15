@@ -24,7 +24,7 @@ describe Account do
 
       it('adds complete transaction detail to transactions') do
         subject.deposit(5)
-        expect(subject.transactions).to eq [{:date=>"01/01/2001", :credit=>5, :balance=>5}]
+        expect(subject.transactions).to eq [{:date=>"01/01/2001", :credit=>5.00, :balance=>5.00}]
       end
     end
 
@@ -46,7 +46,7 @@ describe Account do
         it('adds complete transaction detail to transactions') do
           subject.deposit(100)
           subject.withdraw(5)
-          expect(subject.transactions).to eq [{:balance=>100, :credit=>100, :date=>"01/01/2001"}, {:balance=>95, :date=>"01/01/2001", :debit=>5}]
+          expect(subject.transactions).to eq [{:balance=>100.00, :credit=>100.00, :date=>"01/01/2001"}, {:balance=>95.00, :date=>"01/01/2001", :debit=>5.00}]
         end
       end
       context('with insuficcient funds') do
