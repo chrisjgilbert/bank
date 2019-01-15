@@ -3,17 +3,19 @@ class Account
 
   attr_reader :balance, :transactions
 
-  def initialize(statement = Statement.new)
+  def initialize(statement = Statement.new, date_formatter = DateFormatter.new)
     @balance = DEFAULT_BALANCE
     @transactions = []
     @statment = statement
+    @date_formatter = date_formatter
   end
 
   def deposit(amount)
     @balance += amount
     add_to_transactions(
       {
-        amount: amount,
+        date: @date_formatter.getDate,
+        credit: amount,
         balance: @balance
       }
     )

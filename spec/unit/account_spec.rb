@@ -13,6 +13,14 @@ describe Account do
         account = Account.new
         expect { account.deposit(100) }.to change { account.transactions.length }.by(1)
       end
+
+      it('adds date to transaction') do
+        date_formatter = double(:date_formatter, getDate: '01/01/2001')
+        statement = double(:statement)
+        account = Account.new(statement, date_formatter)
+        expect(date_formatter).to receive(:getDate)
+        account.deposit(10)
+      end
     end
 
     describe('#withdraw') do
