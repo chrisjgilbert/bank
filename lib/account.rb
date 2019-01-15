@@ -13,11 +13,9 @@ class Account
   def deposit(amount)
     @balance += amount
     add_to_transactions(
-      {
-        date: @date_formatter.getDate,
-        credit: amount,
-        balance: @balance
-      }
+      date: @date_formatter.getDate,
+      credit: amount,
+      balance: @balance
     )
   end
 
@@ -26,11 +24,9 @@ class Account
 
     @balance -= amount
     add_to_transactions(
-      {
-        date: @date_formatter.getDate,
-        debit: amount,
-        balance: @balance
-      }
+      date: @date_formatter.getDate,
+      debit: amount,
+      balance: @balance
     )
   end
 
