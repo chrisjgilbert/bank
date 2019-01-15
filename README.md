@@ -5,7 +5,7 @@ I began this challenge by diagramming out the classes and their respective behav
 
 After this planning stage, I started by creating the Account class and it's core transaction methods: deposit and withdraw.
 
-Once this was done I created the DateFormatter then finally the Statement class.
+Once this was done I created the DateFormatter as I needed this to give me the date in a pretty format to add into the transaction history. I then finally added the Statement class which just printed out the transaction history with a header.
 
 ## Testing
 * Tested using RSpec   
