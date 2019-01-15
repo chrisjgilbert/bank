@@ -29,5 +29,12 @@ describe 'account feature' do
       account.deposit(100)
       expect { account.withdraw(50) }.to change { account.transactions.length }.by(1)
     end
+
+    it('prints out a statement') do
+      account = Account.new
+      account.deposit(100)
+      account.withdraw(50)
+      expect { account.print_statement }.not_to raise_error
+    end
   end
 end

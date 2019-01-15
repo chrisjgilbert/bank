@@ -35,5 +35,14 @@ describe Account do
         end
       end
     end
+
+    describe('#print_statement') do
+      it('calls on statement to print') do
+        statement = double(:statement, print: 'print')
+        account = Account.new(statement)
+        expect(statement).to receive(:print)
+        account.print_statement
+      end
+    end
   end
 end
