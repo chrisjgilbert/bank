@@ -12,11 +12,15 @@ class Statement
 
   def print_transactions(transactions)
     transactions.each do |transaction|
-      date = transaction[:date]
-      credit = transaction[:credit]
-      debit = transaction[:debit]
-      balance = transaction[:balance]
+      date = (transaction[:date])
+      credit = number_formatter(transaction[:credit])
+      debit = number_formatter(transaction[:debit])
+      balance = number_formatter(transaction[:balance])
       puts "#{date} || #{credit} || #{debit} || #{balance}"
     end
+  end
+
+  def number_formatter(number)
+    '%.2f' % number if number 
   end
 end
