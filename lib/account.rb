@@ -11,7 +11,7 @@ class Account
   end
 
   def deposit(amount)
-    @balance += amount
+    credit(amount)
     add_to_transactions(
       date: @date_formatter.getDate,
       credit: amount,
@@ -22,7 +22,7 @@ class Account
   def withdraw(amount)
     raise_insufficient_funds_error if insufficient_funds?(amount)
 
-    @balance -= amount
+    debit(amount)
     add_to_transactions(
       date: @date_formatter.getDate,
       debit: amount,
@@ -46,5 +46,13 @@ class Account
 
   def add_to_transactions(transaction)
     @transactions.push(transaction)
+  end
+
+  def debit(amount)
+    @balance -= amount
+  end
+
+  def credit(amount)
+    @balance += amount
   end
 end
