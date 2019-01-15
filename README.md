@@ -21,7 +21,7 @@ Once this was done I created the DateFormatter then finally the Statement class.
 `git clone https://github.com/chrisjgilbert/bank`   
 `cd bank`   
 `irb`   
-`require './account'`   
+`require './lib/account'`   
 `account = Account.new`
 
 ## Acceptance Criteria   
