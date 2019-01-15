@@ -5,7 +5,7 @@ class DateFormatter
     @date = date
   end
 
-  def get_date
+  def show_date
     @date.today.strftime('%d/%m/%Y')
   end
 end

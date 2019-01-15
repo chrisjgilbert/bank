@@ -3,7 +3,7 @@ require 'account'
 
 describe Account do
   let(:statement) { double(:statement) }
-  let(:date_formatter) { double(:date_formatter, get_date: '01/01/2001') }
+  let(:date_formatter) { double(:date_formatter, show_date: '01/01/2001') }
   let(:subject) { described_class.new(statement, date_formatter) }
 
   context('transactions') do
@@ -17,7 +17,7 @@ describe Account do
       end
 
       it('adds date to transaction') do
-        expect(date_formatter).to receive(:get_date)
+        expect(date_formatter).to receive(:show_date)
         subject.deposit(10)
       end
 
@@ -39,7 +39,7 @@ describe Account do
           expect { subject.withdraw(50) }.to change { subject.transactions.length }.by(1)
         end
         it('adds date to transaction') do
-          expect(date_formatter).to receive(:get_date)
+          expect(date_formatter).to receive(:show_date)
           subject.withdraw(10)
         end
         it('adds complete transaction detail to transactions') do
