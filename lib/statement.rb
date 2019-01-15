@@ -11,7 +11,7 @@ class Statement
   end
 
   def print_transactions(transactions)
-    transactions.each do |transaction|
+    transactions.reverse_each do |transaction|
       date = (transaction[:date])
       credit = number_formatter(transaction[:credit])
       debit = number_formatter(transaction[:debit])
@@ -21,6 +21,6 @@ class Statement
   end
 
   def number_formatter(number)
-    '%.2f' % number if number 
+    '%.2f' % number if number
   end
 end
