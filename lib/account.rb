@@ -13,8 +13,6 @@ class Account
     @balance += amount
     add_to_transactions(
       {
-        date: "01/10/14",
-        type: :debit,
         amount: amount,
         balance: @balance
       }
@@ -27,8 +25,6 @@ class Account
     @balance -= amount
     add_to_transactions(
       {
-        date: "01/10/14",
-        type: :debit,
         amount: amount,
         balance: @balance
       }
